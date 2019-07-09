@@ -1,0 +1,5 @@
+CREATE TABLE usuarios (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20) NOT NULL, password VARCHAR(255) NOT NULL, email VARCHAR(100) NOT NULL, gender VARCHAR(25), birthdate DATE, image VARCHAR(500)) CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+CREATE TABLE publicaciones (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, id_usuario INTEGER NOT NULL, text VARCHAR(1000) NOT NULL, fecha DATETIME, CONSTRAINT fk_publi_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios (id)) CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+CREATE TABLE comentarios (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, id_usuario INTEGER NOT NULL, id_publicacion INTEGER NOT NULL, text VARCHAR(1000) NOT NULL, fecha DATETIME, CONSTRAINT fk_comentario_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios (id), CONSTRAINT fk_comentario_publi FOREIGN KEY (id_publicacion) REFERENCES publicaciones (id)) CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

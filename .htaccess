@@ -1,0 +1,6 @@
+Options -Indexes
+ErrorDocument 404 http://localhost/ProyectoBlog_v3/config/page404?uri=%{REQUEST_URI}
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
