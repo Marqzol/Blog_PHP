@@ -19,7 +19,9 @@ html, body {
 body {
   font-family: Philosopher Regular;
   color: #404040;
+  color: black;
   background: #006666;
+  background-color: black;
 }
 
 .access {
